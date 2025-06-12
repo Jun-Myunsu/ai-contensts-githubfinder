@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Finder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Kalam:wght@300;400;700&family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+    <header>GitHub Finder</header>
+    <div id="loading" class="loading-overlay">⏳ Loading...</div>
+
+    <main class="container">
+        <section class="intro-text">
+            <h1>Search GitHub Users</h1>
+            <p>Enter a username to fetch a user profile and repos</p>
+        </section>
+        <section class="search-box">
+            <input type="text" id="search-user" autocomplete="off" placeholder="Enter GitHub username..." />
+            <button id="search-btn">Search</button>
+            <!-- 깃헙 제한으로 기능 보류 -->
+            <!-- <div id="userList" class="dropdown"></div> -->
+        </section>
+
+        <section class="user-info">
+            <div class="user-avatar">
+                <img src="./images/sample.png" id="avatar_url" alt="User Avatar" />
+                <button class="view-profile-btn" id="view-profile-btn">View Profile</button>
+            </div>
+            <div class="user-details">
+                <div class="badges">
+                    <span class="badge" id="public_repos"></span>
+                    <span class="badge" id="public_gists"></span>
+                    <span class="badge" id="followers"></span>
+                    <span class="badge" id="following"></span>
+                </div>
+                <div class="user-meta">
+                    <!-- In a CSS file, the ::before pseudo-element is used to add a title. -->
+                    <p id="user_company"></p>
+                    <p id="user_website"></p>
+                    <p id="user_location"></p>
+                    <p id="user_since"></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="repos" id="repos">
+            <h3>Latest Repos</h3>
+        </section>
+    </main>
+    <footer>
+        GitHub Finder &copy; 2025
+    </footer>
+    <script type="module" src="./script/script.js"></script>
+</body>
+
+</html>

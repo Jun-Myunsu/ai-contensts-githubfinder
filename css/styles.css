@@ -1,0 +1,294 @@
+/* styles.css */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e0ecf8, #d6e6ff);
+  margin: 0;
+  padding: 0;
+  color: #1a1a1a;
+}
+
+header {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: normal;
+  background: linear-gradient(to bottom, #f2f7ff, #dceeff);
+  color: #003366;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  letter-spacing: -0.5px;
+  border-bottom: 1px solid #c9dfff;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  color: #0044aa;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  display: none;
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.container {
+  font-family: "STIX Two Text", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  max-width: 800px;
+  margin: 1rem auto;
+  padding: 1rem;
+  background: #f9fbff;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+}
+
+.intro-text {
+  background: linear-gradient(135deg, #eef5ff, #d6e9ff);
+  padding: 0.5rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.intro-text h1 {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+  color: #222;
+}
+
+.intro-text p {
+  color: #5a5a5a;
+  font-size: 0.75rem;
+}
+
+.search-box {
+  display: flex;
+  position: relative;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  align-items: center; /* 요소들을 세로 중앙 정렬 */
+}
+
+.search-box input {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #bcd2f1;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+#search-btn {
+  padding: 10px 16px;
+  background: #007bff;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#search-btn:hover {
+  background: #0056b3;
+}
+
+.user-avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.user-info img {
+  width: 180px; /* 크기 증가 */
+  height: auto; /* 비율 유지 */
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.75rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.user-info img:hover {
+  transform: scale(1.05);
+  filter: blur(0.3px) brightness(1.25);
+}
+
+.user-details {
+  flex: 1;
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 1;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.badge {
+  background-color: #e6f0ff;
+  color: #1a4d91;
+  padding: 0.4rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+}
+
+#public_repos::before {
+  content: "Public Repos: ";
+}
+
+#public_gists::before {
+  content: "Public Gists: ";
+}
+
+#followers::before {
+  content: "Followers: ";
+}
+
+#following::before {
+  content: "Following: ";
+}
+
+.user-meta {
+  line-height: 1;
+}
+
+#user_company::before {
+  content: "📌 Company: ";
+  font-weight: bold;
+}
+
+#user_website::before {
+  content: "📌 Website/Blog: ";
+  font-weight: bold;
+}
+
+#user_location::before {
+  content: "📌 Location: ";
+  font-weight: bold;
+}
+
+#user_since::before {
+  content: "📌 Member Since: ";
+  font-weight: bold;
+}
+
+.repos {
+  margin-top: 2rem;
+}
+
+.repo-item {
+  padding: 1rem;
+  border: 1px solid #d8e3f0;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  background: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.repo-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.repo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.repo-name {
+  font-weight: bold;
+  color: #0366d6;
+}
+
+.repo-stats span {
+  background: #e6efff;
+  color: #004cbf;
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  margin-left: 0.25rem;
+}
+
+.view-profile-btn {
+  background-color: #3975c9;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-profile-btn:hover {
+  background-color: #0041a8;
+}
+
+a {
+  font-family: "DM Serif Text", serif;
+  font-style: normal;
+  text-decoration: none;
+  color: rgb(35, 95, 186);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: hsl(220, 84%, 29%);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 0 1rem;
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.no-user {
+  font-family: "DM Serif Text", serif;
+  font-style: normal;
+  position: absolute;
+  padding: 8px;
+  color: red;
+  text-align: center;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
